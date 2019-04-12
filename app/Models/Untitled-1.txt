@@ -1,0 +1,2 @@
+\App\Models\Client::all();
+\App\Models\Client::all();
