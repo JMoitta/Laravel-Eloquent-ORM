@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\soccerTeam;
 use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
@@ -28,4 +29,9 @@ class Client extends Model
         'company_name',
         'client_type'
     ];
+
+    public function soccerTeam() // many-to-one
+    {
+        return $this->belongsTo(SoccerTeam::class);
+    }
 }
