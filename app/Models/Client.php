@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\ClientProfile;
 use App\Models\soccerTeam;
 use Illuminate\Database\Eloquent\Model;
 
@@ -34,5 +35,10 @@ class Client extends Model
     public function soccerTeam() // many-to-one
     {
         return $this->belongsTo(SoccerTeam::class);
+    }
+
+    public function clientProfile()
+    {
+        return $this->hasOne(ClientProfile::class);
     }
 }
