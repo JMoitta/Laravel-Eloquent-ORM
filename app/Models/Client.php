@@ -27,7 +27,8 @@ class Client extends Model
         'marital_status',
         'physical_disability',
         'company_name',
-        'client_type'
+        'client_type',
+        'soccer_team_id',
     ];
 
     public function soccerTeam() // many-to-one

@@ -19,7 +19,7 @@ $factory->state(\App\Models\Client::class,\App\Models\Client::TYPE_INDIVIDUAL, f
         'sex' => rand(1, 10) % 2 == 0 ? 'm' : 'f',
         'marital_status' => rand(1, 3),
         'physical_disability' => rand(1, 10) % 2 == 0 ? $faker->word : null,
-        'client_type' => \App\Client::TYPE_INDIVIDUAL
+        'client_type' => \App\Models\Client::TYPE_INDIVIDUAL
     ];
 });
 $factory->state(\App\Models\Client::class,\App\Models\Client::TYPE_LEGAL, function (Faker $faker) {
