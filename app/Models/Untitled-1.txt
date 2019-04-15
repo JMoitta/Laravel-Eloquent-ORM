@@ -1,14 +1,11 @@
 php artisan tinker
-\App\Models\Client::all();
-\App\Models\Client::where('name', 'Brittany Crooks Jr.');
-\App\Models\Client::where('name', 'Brittany Crooks Jr.')->get();
-\App\Models\Client::where('name', '=', 'Brittany%')->get();
-\App\Models\Client::where('name', 'LIKE', '%')->get();
-\App\Models\Client::where('name', 'LIKE', '%')->where('client_type', 'individual')->get();
-\App\Models\Client::where('name', 'LIKE', 'A%')->orWhere('sex', 'f')->get();
-\App\Models\Client::whereName('Brittany Crooks Jr.')->get();
-\App\Models\Client::whereClientType('legal')->get();
-\App\Models\Client::orderBy('name')->get();
-\App\Models\Client::orderBy('name', 'desc')->get();
-\App\Models\Client::orderBy('name', 'asc')->get();
-\App\Models\Client::whereClientType('legal')->count();
+$results = \App\Models\Client::whereClientType('legal')->get();
+$results[0];
+$results->first();
+$results = \App\Models\Client::whereClientType('legal1')->get();
+$results[0];
+$results->first();
+$results = \App\Models\Client::whereClientType('legal')->get();
+$results->last();
+$results->pluck('name');
+$results->pluck('name', 'id');
