@@ -12,6 +12,13 @@ class Category extends Model
      * @var array
      */
     protected $fillable = ['name'];
+    
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'categorias';
 
     public function products()
     {

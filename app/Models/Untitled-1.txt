@@ -1,11 +1,8 @@
+php artisan make:model Models/Categoria -m
+
 php artisan tinker
-$results = \App\Models\Client::whereClientType('legal')->get();
-$results[0];
-$results->first();
-$results = \App\Models\Client::whereClientType('legal1')->get();
-$results[0];
-$results->first();
-$results = \App\Models\Client::whereClientType('legal')->get();
-$results->last();
-$results->pluck('name');
-$results->pluck('name', 'id');
+factory(\App\Models\Category::class)->create()
+$client = \App\Models\Client::find(1);
+$client->time;
+$client = \App\Models\Client::find(1);
+$client->time;
