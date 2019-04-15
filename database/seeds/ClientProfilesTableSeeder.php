@@ -16,15 +16,20 @@ class ClientProfilesTableSeeder extends Seeder
     {
         /** @var \Illuminate\Database\Eloquent\Collection $clients */
         $clients = \App\Models\Client::all();
-        $countClients = $clients->count();
         
+        $clients->each(function ($client)
+        {
+            $clientProfile = factory(ClientProfile::class)->make();
+            $client->clientProfile()->create($clientProfile->toArray());
+        });
+
         /** @var \Illuminate\Database\Eloquent\Collection $collectionLegal */
-        $collectionLegal = factory(ClientProfile::class, $countClients)
-        ->states(Client::TYPE_LEGAL)->make();
+        /*$collectionLegal = factory(ClientProfile::class, $countClients)
+            ->make();
         $collectionLegal->each(function ($clientProfile) use ($clients)
         {
-            $clientProfile->soccer_team_id = $soccers->random()->id;
+            $clientProfile->client_id = $clients->random()->id;
             $clientProfile->save();
-        });
+        });*/
     }
 }
